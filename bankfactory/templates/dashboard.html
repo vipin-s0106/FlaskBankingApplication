@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row">
+		    <div class="col-md-8">
+		    		<div class = "content-section" style="margin-top:20px;background-color:#F3F7F7">
+						<nav class="navbar navbar-expand-md navbar-dark bg-steel"  style="background-color:#F3F7F7">
+						    <div class="container">
+						      <p><img src="{{ url_for('static' ,filename = 'banklogo.png') }}" style="margin-left:20px;color:white" width="40" height="40"></p>
+						      <p style="margin-left:20px;font-size:25px"> Dashboard </p>
+						      <div class="collapse navbar-collapse" id="navbarToggle">
+							        <div class="navbar-nav mr-auto">
+							        </div>
+						        <!-- Navbar Right Side -->
+						      </div>
+						    </div>
+						  </nav>
+						  <hr style="margin-top:0px">
+						  <br>
+						  <div class="row">
+						  	<div class="col-md-4">
+						  	>&nbsp&nbsp&nbsp&nbsp Savings
+						  	</div>
+						  	<div class="col-md-4">
+						  	-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ session.AccountNo }}
+						  	</div>
+						  	<div class="col-md-4" style="color:#4CAF50">
+						  	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ balance }}
+						  	</div>
+						  </div>
+						  <br>
+						  <br>
+						  <p style="color:red">Earn more with competive rates of interest on your Fixed Deposit [FD]</p>
+					</div>
+		    </div>
+		    <div class="col-md-4">
+		      <div class="content-section" style="margin-top:20px">
+		        <h3>Our Sidebar</h3>
+		          <ul class="list-group">
+		            <li class="list-group-item list-group-item-light"><a href="{{ url_for('statement.getStatement') }}">Get Mini Statement</a></li>
+		            <li class="list-group-item list-group-item-light"><a href="{{ url_for('transfer.transferfunds') }}">Transfer Funds</a></li>
+		            <li class="list-group-item list-group-item-light"><a href="{{ url_for('loans.loan') }}">Apply for Loans</a></li>
+		            <li class="list-group-item list-group-item-light"><a href="{{ url_for('recharge.rechargehome') }}">Recharge your Mobile, DTH</a></li>
+		          </ul>
+		        </p>
+		      </div>
+		    </div>
+</div>
+<div class="row">
+		    <div class="col-md-8">
+		    	<div class="col-sm-3">
+		      		<img src="{{ url_for('static' ,filename = 'dipika.png') }}" width="700" height="250"   ALIGN=CENTER >
+		    	</div>
+		    </div>
+		    <div class="col-md-4">
+		      		<img src="{{ url_for('static' ,filename = 'dipika1.jpg') }}" width="350" height="250"   ALIGN=CENTER >
+		    </div>
+</div>
+{% endblock content %}

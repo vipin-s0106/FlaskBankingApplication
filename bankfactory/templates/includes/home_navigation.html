@@ -1,0 +1,19 @@
+<header class="site-header">
+  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top"  style="background-color:#CD143C">
+    <div class="container">
+      <img src="{{ url_for('static' ,filename = 'Axislogo.jpg') }}" width="60" height="50" style="margin-right:20px" ALIGN=CENTER >
+      <a class="navbar-brand mr-4" href="{{ url_for('main.home') }}">Axis Bank | Net Banking</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+	        <div class="navbar-nav mr-auto">
+	        </div>
+	        <!-- Navbar Right Side -->
+	        <div class="navbar-nav">
+	          	<a class="navbar-brand mr-4" style="color:white" href="{{ url_for('customer.login') }}"><span class="glyphicon glyphicon-user"></span>Login</a>
+	        </div>
+      </div>
+    </div>
+  </nav>
+</header>

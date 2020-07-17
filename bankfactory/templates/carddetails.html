@@ -1,0 +1,122 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form action="" method="POST">
+<div class = "content-section" style="margin-top:20px;background-color:#F3F7F7">
+	<nav class="navbar navbar-expand-md navbar-dark bg-steel"  style="background-color:#F3F7F7">
+	    <div class="container">
+	      <p><img src="{{ url_for('static' ,filename = 'card.jpg') }}" style="margin-left:20px;color:white" width="40" height="40"></p>
+	      <h1 style="margin-left:20px;font-size:25px"> Card Details </h1>
+	      <div class="collapse navbar-collapse" id="navbarToggle">
+		        <div class="navbar-nav mr-auto">
+		        </div>
+	        <!-- Navbar Right Side -->
+	      </div>
+	    </div>
+    </nav>
+    <hr style="margin-top:0px">
+    <br>
+    
+    
+    <!-- Credit Card HTML Code -->
+    
+    <div class="content-section">
+    	<div class="container">
+			  <p style="font-size:22px"><b>Credit Card</b></p>
+			   {% if credit_card|length > 0 %}       
+				  <table class="table">
+				    <thead style="background-color:#CD143C;color:white">
+				      <tr>
+				      	<th style="text-align:center"></th>
+				        <th style="text-align:center">Card No</th>
+				        <th style="text-align:center">Card Holder Name</th>
+				        <th style="text-align:center">Account Number</th>
+				        <th style="text-align:center">Status</th>
+				      </tr>
+				    </thead>
+					    <tbody>
+					      
+					      	{% for card in credit_card %}
+					      	<tr>
+						      	<td style="text-align:center"><input type="radio" name="option" value="{{ card[1] }}"></td>
+						        <td style="text-align:center">{{ card[1] }}</td>
+						        <td style="text-align:center">{{ card[2] }}</td>
+						        <td style="text-align:center">{{ card[0] }}</td>
+						        <td style="text-align:center">{{ card[6] }}</td>
+						    </tr>
+						    {% endfor %}
+						  
+					    </tbody>
+				  </table>
+				{% else %}
+						<p>No Records Found</p>
+			    {% endif %}
+			<div class="row">
+				<div class="col-sm-4">
+					<a class="btn" style="background-color:#CD143C;color:white" href="{{ url_for('cards.addcards') }}">Add</a>
+				</div>
+				<div class="col-sm-4">
+				</div>
+				<div class="col-sm-4">
+					{% if credit_card|length > 0 %}
+					    <input class="btn" name="buttonaction" style="background-color:#CD143C;color:white;margin-left:100px" type=submit value=Activate>
+						<input class="btn" name="buttonaction" type=submit style="background-color:#CD143C;color:white" value=Deactivate>
+					{% endif %}	
+				</div>
+			</div>
+			
+		</div>
+    </div>  
+    
+    <!-- Debit Card HTML Code -->
+    
+    <div class="content-section">
+    	<div class="container">
+			  <p style="font-size:22px"><b>Debit Card</b></p>   
+			  {% if credit_card|length > 0 %}
+				  <table class="table">
+				    <thead style="background-color:#CD143C;color:white">
+				      <tr>
+				      	<th style="text-align:center"></th>
+				        <th style="text-align:center">Card No</th>
+				        <th style="text-align:center">Card Holder Name</th>
+				        <th style="text-align:center">Account Number</th>
+				        <th style="text-align:center">Status</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      
+				      	{% for card in debit_card %}
+				      	<tr>
+					      	   	<td style="text-align:center"><input type="radio" name="option" value="{{ card[1] }}"></td>
+						        <td style="text-align:center">{{ card[1] }}</td>
+						        <td style="text-align:center">{{ card[2] }}</td>
+						        <td style="text-align:center">{{ card[0] }}</td>
+						        <td style="text-align:center">{{ card[6] }}</td>
+						</tr>
+					     {% endfor %}
+				      
+				      
+				    </tbody>
+				  </table>
+			{% else %}
+			      <p>No Records Found</p>
+			{% endif %}
+			<div class="row">
+				<div class="col-sm-4">
+					<a class="btn" style="background-color:#CD143C;color:white" href="{{ url_for('cards.addcards') }}">Add</a>
+				</div>
+				<div class="col-sm-4">
+				</div>
+				<div class="col-sm-4">
+					{% if credit_card|length > 0 %}
+					    <input class="btn" name="buttonaction" style="background-color:#CD143C;color:white;margin-left:100px" type=submit value=Activate>
+						<input class="btn" name="buttonaction" type=submit style="background-color:#CD143C;color:white" value=Deactivate>
+					{% endif %}	
+				</div>
+			</div>
+		</div>
+    </div>  
+    
+</div>
+</form>
+{% endblock content %}

@@ -1,0 +1,79 @@
+{% extends 'home_layout.html' %}
+{% block content %}
+<div class="container" ALIGN=>
+	<div class="row">
+		<div class="col-md-8">
+		    <div class="col-sm-4">
+		      <img src="{{ url_for('static' ,filename = 'home3.jpg') }}" width="700" height="250" style="margin-right:20px"  ALIGN=CENTER >
+		    </div>
+		    <br>
+		    <div class="col-sm-4">
+		      <img src="{{ url_for('static' ,filename = 'home4.png') }}" width="700" height="250" style="margin-right:20px"  ALIGN=CENTER >
+		    </div>
+		    <br>
+		    <div class="col-sm-4">
+		      <img src="{{ url_for('static' ,filename = 'home2.jpg') }}" width="700" height="250" style="margin-right:20px"  ALIGN=CENTER >
+		    </div>
+		    <br>
+		    <div class="col-sm-4">
+		      <img src="{{ url_for('static' ,filename = 'home4.jpg') }}" width="700" height="250" style="margin-right:20px"  ALIGN=CENTER >
+		    </div>
+	    </div>
+	    <div class="col-md-4">
+	        <h3>Our Offers</h3>
+	          <ul class="list-group">
+	            <li class="list-group-item list-group-item-light"><img src="{{ url_for('static' ,filename = 'offer1.PNG') }}" width="320" height="250" style="margin-right:20px"  ALIGN=CENTER ></li>
+	            <li class="list-group-item list-group-item-light"><img src="{{ url_for('static' ,filename = 'offer2.PNG') }}" width="320" height="250" style="margin-right:20px"  ALIGN=CENTER ></li>
+	            <li class="list-group-item list-group-item-light"><img src="{{ url_for('static' ,filename = 'offer3.PNG') }}" width="320" height="250" style="margin-right:20px"  ALIGN=CENTER ></li>
+	          </ul>
+		</div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div class="container">
+	<div class="row" style="background-color: grey;margin-right:40px;margin-left:50px">
+		<div class="col-md-4">
+			<ul class="footerMainUl">
+				<li class="col" ><h3 style="color: white">Contact Us</h3>
+				  <ul>
+					  <li style="color:white"><p>Call: 1800-419-5959<br>to get your Account Balance</p></li>
+					  <li style="color:white"><p>Call: 1800-419-6969<br>to get your Mini Statement</p></li>
+					  <li style="color:white"><p>Find your Nearest<br>Complaints and Grievance Redressal</p></li>
+				  </ul>
+				</li>
+			</ul>
+		</div>
+	
+	
+		<div class="col-md-4">
+			<ul class="footerMainUl">
+				<li class="col"><h3 style="color: white">MEDIA CENTER</h3>
+				  <ul>
+					  <li style="color:white"><p>Corporate Profile</p></li>
+					  <li style="color:white"><p>Vision and Values</p></li>
+					  <li style="color:white"><p>Awards & Recognition</p></li>
+					  <li style="color:white"><p>Press release</p></li>
+					  <li style="color:white"><p>Gallery</p></li>
+				  </ul>
+				</li>
+			</ul>
+		</div>
+	
+		<div class="col-md-4">
+			<ul class="footerMainUl">
+				<li class="col"><h3 style="color: white">OTHER LINKS</h3>
+				  <ul>
+					  <li style="color:white"><p>Axis Group</p></li>
+					  <li style="color:white"><p>KYC Information</p></li>
+					  <li style="color:white"><p>FAQs</p></li>
+					  <li style="color:white"><p>Careers</p></li>
+					  <li style="color:white"><p>Social media</p></li>
+				  </ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="content-section">
+<p style="font-size:15px"><a href="{{ url_for('transfer.transferfunds') }}"><b> ↩    Back to Payee list<b></a>
+<hr>
+<h1 style="font-size:24px">{{ payee[2] }} ( {{ payee[1] }} )</h1>
+	    <br>
+		<div class = "content-section" style="margin-left:20px">
+		    <p>▶    Details</p>
+		    <div class="content-section">
+				<form method="POST" action="">
+					{{ form.hidden_tag() }}
+					<p>▶  Payee Details</p>
+					<table class="table table-hover">
+					    <thead>
+					      <tr>
+					        <th style="text-align:center">PayeeName</th>
+					        <th style="text-align:center">Account No</th>
+					        <th style="text-align:center">Bank Name</th>
+					        <th style="text-align:center">Branch</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr>
+					        <td style="text-align:center">{{ payee[2] }}</td>
+					        <td style="text-align:center">{{ payee[1] }}</td>
+					        <td style="text-align:center">{{ payee[4] }}</td>
+					        <td style="text-align:center">{{ payee[5] }}</td>
+					      </tr>
+					    </tbody>
+					</table>
+					<br>
+					<p>▶ Payment Details<hr></p>
+					<fieldset class="form-group">
+						<div class="form-group">
+							{{ form.payement_type.label(class="form-control-label") }}
+							{{ form.payement_type(class="form-control",style="list-style:none") }}
+						</div>
+						<div class="row" >
+						    <div class="col-md-4" style="margin-top:10px">
+								<div class="form-group">
+									{% if form.amount.errors %}
+										{{ form.amount(class="form-control") }}
+										<div class="invalid-feedback">
+											{% for error in form.amount.errors %}
+												<span>{{ error }}</span>
+											{% endfor %}
+										</div>
+									{% else %}
+										{{ form.amount(class="form-control",placeholder="Amount *") }}
+									{% endif %}
+								</div>
+							</div>
+							<div class="col-md-4" style="margin-top:10px">
+								<div class="form-group">
+									{% if form.remarks.errors %}
+										{{ form.remarks(class="form-control") }}
+										<div class="invalid-feedback">
+											{% for error in form.remarks.errors %}
+												<span>{{ error }}</span>
+											{% endfor %}
+										</div>
+									{% else %}
+										{{ form.remarks(class="form-control",placeholder="Remarks") }}
+									{% endif %}
+								</div>
+							 </div>
+						</div>
+						<br>
+						<div class="form-group">
+							{{ form.submit(class="btn",style="background-color:#CD143C;color:white") }}
+							<a class="btn" height="10px" style="background-color:#CD143C;color:white;margin-left:10px" href="{{ url_for('transfer.transferfunds') }}">Cancel</a>
+						</div>
+					</fieldset>
+				</form>
+			 </div>
+	    </div>
+</div>
+{% endblock content %}

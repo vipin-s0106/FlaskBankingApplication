@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form method="POST" enctype=multipart/form-data action="">
+	<div class="row">
+			    <div class="col-md-8">
+			    		<div class = "content-section" style="margin-top:20px;background-color:#F3F7F7">
+							<nav class="navbar navbar-expand-md navbar-dark bg-steel"  style="background-color:#F3F7F7">
+							      <p><img src="{{ url_for('static' ,filename = 'Account.jpg') }}" style="margin-left:20px;color:white" width="30" height="30"></p>
+							      <p style="margin-left:20px;font-size:20px"> Accounts Details </p>
+							      <div class="collapse navbar-collapse" id="navbarToggle">
+								        <div class="navbar-nav mr-auto">
+								        </div>
+							        <!-- Navbar Right Side -->
+							      </div>
+							  </nav>
+							  <hr style="margin-top:0px">
+							  <br>
+							  <div class="row">
+								  	<div class="col-md-2">Login ID<br>
+								  						<b>{{ customer[0] }}</b><br><br>
+								  						Mobile<br>
+									  						<b>{{ customer[5] }}</b><br>
+									  						<br>
+									  						<br>
+									  						<div class="form-group">
+														       <input class = "btn" style="background-color:#CD143C;color:white" type=submit value=Save>
+														    </div>
+								  	</div>
+								  	<div class="col-md-4" style="margin-left:40px">Your Name<br>
+								  	        <b>{{ customer[3] }}</b>
+								  	</div>
+								  	<div class="col-md-4">
+								  		<div class="media">
+									        <img src="{{ image_file }}" width="140" class="img-circle" height="140" style="margin-left:25px"  ALIGN=CENTER >
+									   </div>
+									   <br>
+									        <input type=file  name=file>
+								  	</div>
+							  </div>
+							  <br>
+							  <br>
+						</div>
+			    </div>
+			    <div class="col-md-4">
+			      <div class="content-section" style="margin-top:20px">
+			        <h3>Our Sidebar</h3>
+			          <ul class="list-group">
+			            <li class="list-group-item list-group-item-light"><a href="{{ url_for('statement.getStatement') }}">Get Mini Statement</a></li>
+			            <li class="list-group-item list-group-item-light"><a href="{{ url_for('transfer.transferfunds') }}">Transfer Funds</a></li>
+			            <li class="list-group-item list-group-item-light"><a href="{{ url_for('loans.loan') }}">Apply for Loans</a></li>
+			            <li class="list-group-item list-group-item-light"><a href="{{ url_for('recharge.rechargehome') }}">Recharge your Mobile, DTH</a></li>
+			          </ul>
+			        </p>
+			      </div>
+			    </div>
+	</div>
+</form>
+{% endblock content %}

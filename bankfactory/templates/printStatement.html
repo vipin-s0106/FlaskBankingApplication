@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+ <div class="content-section" style="margin-top:20px">
+ 	<div class="container">
+		  <h2 style="font-size:25px">Transactions</h2>    
+		  <p style="font-size:11px"><b> (Total Records {{ transaction|length }})</b></p>        
+		  <table class="table table-hover">
+		    <thead>
+		      <tr style="background-color:#CD143C;color:white">
+		        <th style="text-align:center">Transaction ID</th>
+		        <th style="text-align:center">Transaction Date</th>
+		        <th style="text-align:center">Transaction Details</th>
+		        <th style="text-align:center">Amount</th>
+		        <th style="text-align:center">Transaction Type</th>
+		        <th style="text-align:center">Balance</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      {% for tx in transaction %}
+		      	 <tr>
+			        <td style="text-align:center">{{ tx[1] }}</td>
+			        <td style="text-align:center">{{ tx[2] }}</td>
+			        <td style="text-align:center">{{ tx[3] }}</td>
+			        <td style="text-align:center">{{ tx[4] }}</td>
+			        {% if tx[5] == 'C' %}
+			        	<td style="text-align:center;color:green">{{ tx[5] }}</td>
+			        {% else %}
+			        	<td style="text-align:center;color:red">{{ tx[5] }}</td>
+			        {% endif %}
+			        <td style="text-align:center">{{ tx[6] }}</td>
+		        </tr>
+		      {% endfor %}
+		    </tbody>
+		  </table>
+	</div>
+</div>
+{% endblock content %}

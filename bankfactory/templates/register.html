@@ -1,0 +1,123 @@
+{% extends 'home_layout.html' %}
+{% block content %}
+<form method="POST" action="">
+	{{ form.hidden_tag() }}
+	<div class="container register">
+               <div class="row">
+                   <div class="col-md-9 register-right" style="margin-left:140px;margin-top:50px">
+                       <div class="tab-content" id="myTabContent">
+                           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                               <h3 class="register-heading" >Register</h3>
+                               <div class="row register-form" style="margin-up:40px">
+                                   <div class="col-md-6">
+                                    <div class="form-group">
+										{% if form.account_holder_name.errors %}
+											{{ form.account_holder_name(class="form-control form-control-lg is-invalid") }}
+											<div class="invalid-feedback">
+												{% for error in form.account_holder_name.errors %}
+													<span>{{ error }}</span>
+												{% endfor %}
+											</div>
+										{% else %}
+											{{ form.account_holder_name(class="form-control", placeholder="Account Holder Name *") }}
+										{% endif %}
+									</div>
+                                       <div class="form-group">
+										{% if form.account_number.errors %}
+											{{ form.account_number(class="form-control form-control-lg is-invalid") }}
+											<div class="invalid-feedback">
+												{% for error in form.account_number.errors %}
+													<span>{{ error }}</span>
+												{% endfor %}
+											</div>
+										{% else %}
+											{{ form.account_number(class="form-control", placeholder="Account Number *") }}
+										{% endif %}
+									</div>
+                                       <div class="form-group">
+										{% if form.branch_name.errors %}
+											{{ form.branch_name(class="form-control form-control-lg is-invalid") }}
+											<div class="invalid-feedback">
+												{% for error in form.branch_name.errors %}
+													<span>{{ error }}</span>
+												{% endfor %}
+											</div>
+										{% else %}
+											{{ form.branch_name(class="form-control", placeholder="Branch Name *") }}
+										{% endif %}
+									</div>
+                                       <div class="form-group">
+										{% if form.ifsc.errors %}
+											{{ form.ifsc(class="form-control form-control-lg is-invalid") }}
+											<div class="invalid-feedback">
+												{% for error in form.ifsc.errors %}
+													<span>{{ error }}</span>
+												{% endfor %}
+											</div>
+										{% else %}
+											{{ form.ifsc(class="form-control", placeholder="IFSC Code *") }}
+										{% endif %}
+									</div>
+                                       <div class="form-group">
+                                           {{ form.submit(class="btn btn-success") }}
+                                       </div>
+                                   </div>
+                                   <div class="col-md-6">
+                                       <div class="form-group">
+										{% if form.mobile_no.errors %}
+											{{ form.mobile_no(class="form-control form-control-lg is-invalid") }}
+											<div class="invalid-feedback">
+												{% for error in form.mobile_no.errors %}
+													<span>{{ error }}</span>
+												{% endfor %}
+											</div>
+										{% else %}
+											{{ form.mobile_no(class="form-control", placeholder="Registered Mobile No *") }}
+										{% endif %}
+									</div>
+                                       <div class="form-group">
+										{% if form.email.errors %}
+											{{ form.email(class="form-control form-control-lg is-invalid") }}
+											<div class="invalid-feedback">
+												{% for error in form.email.errors %}
+													<span>{{ error }}</span>
+												{% endfor %}
+											</div>
+										{% else %}
+											{{ form.email(class="form-control", placeholder="Registered Email-ID *") }}
+										{% endif %}
+									</div>
+                                       <div class="form-group">
+                                           {{ form.country(class="form-control")}}
+                                       </div>
+                                       <div class="form-group">
+                                       	<div class="row">
+                                       		<div class="col-md-6">
+												{% if form.dob.errors %}
+													{{ form.dob(class="form-control form-control-lg is-invalid") }}
+													<div class="invalid-feedback">
+														{% for error in form.dob.errors %}
+															<span>{{ error }}</span>
+														{% endfor %}
+													</div>
+												{% else %}
+													{{ form.dob(class="form-control", placeholder="DOB") }}
+												{% endif %}
+											</div>
+											<div class="col-md-4">
+												<div class="container">
+													DOB
+												</div>
+												
+											</div>
+										</div>
+									</div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+            </div>
+	  </div>
+</form>
+{% endblock content %}

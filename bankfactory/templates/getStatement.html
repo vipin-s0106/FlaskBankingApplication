@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row">
+		    <div class="col-md-8">
+		    		<div class="content-section" style="margin-top:20px">
+		    		<h2 style="font-size:25px">Statements</h2>
+		    		<hr>
+		    			<form method="POST" action="">
+							{{ form.hidden_tag() }}
+							<fieldset class="form-group">
+							<div class="row">
+								<div class="col-md-5">
+									<div class="form-group">
+										<input type="radio" name="paytype" id="radio1" value="1" onclick="disable_field()" checked>&nbsp&nbsp&nbsp Transaction Date<br>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-md-2">
+												{{ form.from_date.label(class="form-control-label") }}
+											</div>
+											<div class="col-md-9">								
+												{{ form.from_date(class="form-control",id="from_date") }}
+											</div>	
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-md-2">
+												{{ form.to_date.label(class="form-control-label") }}
+											</div>
+											<div class="col-md-9">								
+												{{ form.to_date(class="form-control",id="to_date") }}
+											</div>	
+										</div>								
+									</div>
+								</div>
+								<div class="col-md-5" style="margin-left:100px">
+									<div class="form-group">
+										<input type="radio" name="paytype" id="radio2" value="2" onclick="disable_field()">&nbsp&nbsp&nbsp Transaction Period<br>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-md-2">
+												{{ form.period.label(class="form-control-label") }}
+											</div>
+											<div class="col-md-7">								
+												{{ form.period(class="form-control",id="period") }}
+											</div>	
+										</div>								
+									</div>
+								</div>
+							</div>
+							</fieldset>
+							<div class = "form-group">
+								{{ form.submit(class="btn",style="background-color:#CD143C;color:white") }}
+							</div>
+				
+						</form>
+			
+		    		</div>
+		    </div>
+		    <div class="col-md-4">
+		      <div class="content-section" style="margin-top:20px">
+		        <h3>Our Sidebar</h3>
+		          <ul class="list-group">
+		            <li class="list-group-item list-group-item-light"><a href="{{ url_for('statement.getStatement') }}">Get Mini Statement</a></li>
+		            <li class="list-group-item list-group-item-light"><a href="{{ url_for('transfer.transferfunds') }}">Transfer Funds</a></li>
+		            <li class="list-group-item list-group-item-light"><a href="{{ url_for('loans.loan') }}">Apply for Loans</a></li>
+		            <li class="list-group-item list-group-item-light"><a href="{{ url_for('recharge.rechargehome') }}">Recharge your Mobile, DTH</a></li>
+		          </ul>
+		        </p>
+		      </div>
+		    </div>
+</div>
+{% endblock content %}

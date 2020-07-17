@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//bankfactory/recharge/forms.py=UTF-8
+encoding//bankfactory/templates/addpayee.html=UTF-8
+encoding//bankfactory/templates/beginpayment.html=UTF-8
+encoding//bankfactory/templates/dashboard.html=UTF-8
+encoding//bankfactory/templates/loan.html=UTF-8
+encoding//bankfactory/templates/rechargedth.html=UTF-8
+encoding//bankfactory/templates/rechargeelec.html=UTF-8
+encoding//bankfactory/templates/rechargehome.html=UTF-8
+encoding//bankfactory/templates/rechargemobile.html=UTF-8

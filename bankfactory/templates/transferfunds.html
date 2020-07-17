@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form action="" method="POST">
+ <div class="content-section" style="margin-top:20px">
+ 	<h2 style="font-size:25px">Transfer Funds</h2>
+    <hr>
+ 	<div class="container">
+		  <h2 style="font-size:21px">Payee</h2>
+		  {% if payee_list|length > 0 %}      
+			  <table class="table table-hover">
+			    <thead>
+			      <tr style="background-color:#CD143C;color:white">
+			      	<th style="text-align:center"></th>
+			        <th style="text-align:center">Account No</th>
+			        <th style="text-align:center">Payee Name</th>
+			        <th style="text-align:center">Status</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			    	
+				    	{% for payee in payee_list %}
+					      	 <tr>
+						        <td style="text-align:center"><input type="radio" name="payeeaccountno" value="{{ payee[1] }}"></td>
+						        <td style="text-align:center">{{ payee[1] }}</td>
+						        <td style="text-align:center">{{ payee[2] }}</td>
+						        <td style="text-align:center">Active</td>
+					        </tr>
+					     {% endfor %} 
+			    </tbody>
+			  </table>
+		  {% else %}
+		  	<p style="font-size:16px;margin-bottom:50px" align="center">No Records Found</p>
+		  {% endif %}
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+			<input class="btn" style="background-color:#CD143C;color:white" name="buttonaction" type=submit value="Begin Payement">
+		</div>
+		<div class="col-sm-4">
+		</div>
+		<div class="col-sm-4">
+		    <a class="btn" style="background-color:#CD143C;color:white;margin-left:85px" href="{{ url_for('transfer.addpayee') }}">Add Payee</a>
+			<input class="btn" style="background-color:#CD143C;color:white" name="buttonaction" type=submit value="Remove Payee">
+		</div>
+	</div>
+</div>
+</form>
+{% endblock content %}

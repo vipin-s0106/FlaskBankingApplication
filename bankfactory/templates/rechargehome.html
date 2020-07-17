@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="content-section">
+<h2 style="font-size:25px">Recharge</h2>
+<hr>
+<br>
+<p><b>You can pay your bills with instant Axis Discounted Offers<br>
+Choose range of Axis Bank Recharge offering</b></p>
+<br>
+<br>
+<a href="{{ url_for('recharge.rechargemobile')}}" style="color:#CD143C" >▶ <b>Recahrge Mobile Bills</b></a><br>
+<a href="{{ url_for('recharge.rechargedth')}}" style="color:#CD143C">▶ <b>Recharge DTH Bills</b></a><br>
+<a href="{{ url_for('recharge.rechargeelec')}}" style="color:#CD143C">▶ <b>Recharge Electricity Bills</b></a>
+</div>
+{% endblock content %}

@@ -1,0 +1,45 @@
+<header class="site-header" style="margin-bottom: 1px">
+  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top"  style="background-color:#CD143C">
+    <div class="container">
+      <img src="{{ url_for('static' ,filename = 'Axislogo.jpg') }}" width="60" height="50" style="margin-right:20px" ALIGN=CENTER >
+      <a class="navbar-brand mr-4" href="{{ url_for('main.home')}}">Axis Bank | Net Banking</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+	        <div class="navbar-nav mr-auto">
+	        </div>
+        <!-- Navbar Right Side -->
+        <div class="navbar-nav">
+        	<img src="{{ url_for('static' ,filename = 'Account.jpg') }}" style="margin-left:20px;color:white" width="40" height="40">
+	        <div class="dropdown" style="background-color:white;color:black">
+			    <button class="btn btn-default dropdown-toggle" style="background-color:white;color:black" type="button" data-toggle="dropdown">{{ session.AccountNo }}
+			    <span class="caret" style="background-color:white;color:black"></span></button>
+			    <ul class="dropdown-menu" style="background-color:white;color:black">
+			      <li><a class="btn" href="{{ url_for('customer.account') }}" style="background-color:white;color:black;margin-left:35px">Account</a></li>
+			      <li class="divider"></li>
+	          	  <li><a class="btn"  href="{{ url_for('customer.logout') }}" style="background-color:white;color:black;margin-left:35px">Logout</a></li>
+			    </ul>
+ 			 </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<nav class="navbar navbar-expand-md navbar-dark bg-steel" style="background-color:white;margin-bottom:10px">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarToggle">
+	        <div class="navbar-nav mr-auto">
+	          <a class="nav-item nav-link" href="{{ url_for('customer.dashboard') }}" style="color:black">Dashboard</a>
+	          <a class="nav-item nav-link" href="{{ url_for('transfer.transferfunds') }}" style="color:black">Fund Transfer</a>
+	          <a class="nav-item nav-link" href="{{ url_for('statement.getStatement') }}" style="color:black">Statement</a>
+	          <a class="nav-item nav-link" href="{{ url_for('cards.carddetails') }}" style="color:black">Cards</a>
+	          <a class="nav-item nav-link" href="{{ url_for('loans.loan') }}" style="color:black">Loans</a>
+	          <a class="nav-item nav-link" href="{{ url_for('recharge.rechargehome') }}" style="color:black">Recharge</a>
+	        </div>
+	        <!-- Navbar Right Side -->
+	        <div class="navbar-nav">
+	        </div>
+      </div>
+    </div>
+  </nav>
